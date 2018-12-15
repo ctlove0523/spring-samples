@@ -24,6 +24,7 @@
     
 	<modules>
         <module>task-scheduler</module>
+        <module>retry</module>
     </modules>
 
 
