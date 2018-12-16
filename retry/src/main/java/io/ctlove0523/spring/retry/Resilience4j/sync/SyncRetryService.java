@@ -1,7 +1,7 @@
 package io.ctlove0523.spring.retry.resilience4j.sync;
 
-import io.ctlove0523.spring.retry.resilience4j.sync.excpetion.RetryNeedException;
-import io.ctlove0523.spring.retry.resilience4j.sync.excpetion.RetryNoNeedException;
+import io.ctlove0523.spring.retry.resilience4j.excpetion.RetryNeedException;
+import io.ctlove0523.spring.retry.resilience4j.excpetion.RetryNoNeedException;
 import io.github.resilience4j.retry.Retry;
 import io.github.resilience4j.retry.RetryConfig;
 
@@ -22,12 +22,8 @@ public class SyncRetryService {
             .waitDuration(Duration.ofMillis(DEFAULT_WAIT_DURATION))
             .retryExceptions(RetryNeedException.class)
             .ignoreExceptions(RetryNoNeedException.class)
-            .retryOnException(throwable -> {
-                return throwable instanceof RuntimeException;
-            })
-            .retryOnResult(resp -> {
-                return resp.toString().contains("need retry");
-            })
+            .retryOnException(throwable -> throwable instanceof RuntimeException)
+            .retryOnResult(resp -> resp.toString().contains("need retry"))
             .build();
 
     private Retry retry = Retry.of("sync retry", config);

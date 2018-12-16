@@ -1,4 +1,4 @@
-package io.ctlove0523.spring.retry.resilience4j.sync.excpetion;
+package io.ctlove0523.spring.retry.resilience4j.excpetion;
 
 /**
  * Copyright (C), 2018-2018, open source
