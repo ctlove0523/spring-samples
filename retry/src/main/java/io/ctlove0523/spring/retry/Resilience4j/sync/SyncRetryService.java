@@ -23,7 +23,7 @@ public class SyncRetryService {
             .retryExceptions(RetryNeedException.class)
             .ignoreExceptions(RetryNoNeedException.class)
             .retryOnException(throwable -> throwable instanceof RuntimeException)
-            .retryOnResult(resp -> resp.toString().contains("need retry"))
+            .retryOnResult(resp -> resp.toString().contains("result cause retry"))
             .build();
 
     private Retry retry = Retry.of("sync retry", config);
@@ -58,7 +58,7 @@ public class SyncRetryService {
                 @Override
                 public String call() throws Exception {
                     if (executeTimes++ < 3) {
-                        return "need retry";
+                        return "result cause retry";
                     }
                     return "success";
                 }
