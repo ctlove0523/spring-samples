@@ -56,46 +56,6 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>3.0.3</version>
-                <configuration>
-                    <excludeFilterFile>config/FindBugsExcludeFilter.xml</excludeFilterFile>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.17</version>
-                <configuration>
-                    <configLocation>config/CheckStypeConfig.xml</configLocation>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.6</version>
-                <configuration>
-                    <rulesets>
-                        <ruleset>../config/rulesets/java-basic.xml</ruleset>
-                        <ruleset>../config/rulesets/java-imports.xml</ruleset>
-                        <ruleset>../config/rulesets/java-unusedcode.xml</ruleset>
-                    </rulesets>
-                </configuration>
-            </plugin>
         </plugins>
     </build>
-  <distributionManagement>
-    <repository>
-      <id>CloudArtifact-central</id>
-      <name>Nexus Release Repository</name>
-      <url>http://szxy1.artifactory.cd-cloud-artifact.tools.huawei.com/artifactory/Product-IoT-release/</url>
-    </repository>
-    <snapshotRepository>
-      <id>CloudArtifact-snapshots</id>
-      <name>Nexus Snapshot Repository</name>
-      <url>http://szxy1.artifactory.cd-cloud-artifact.tools.huawei.com/artifactory/Product-IoT-snapshot/</url>
-    </snapshotRepository>
-  </distributionManagement>
 </project>
