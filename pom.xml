@@ -25,6 +25,8 @@
 	<modules>
         <module>task-scheduler</module>
         <module>retry</module>
+        <module>circuit-breakers-client</module>
+        <module>circuit-breakers-server</module>
     </modules>
 
 
