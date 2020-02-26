@@ -27,6 +27,7 @@
         <module>retry</module>
         <module>circuit-breakers-client</module>
         <module>circuit-breakers-server</module>
+        <module>filter</module>
     </modules>
 
 
