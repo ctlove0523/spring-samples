@@ -4,7 +4,7 @@ Filter是对资源请求或/和资源的响应执行过滤任务的对象，资�
 
 ### Filter能干什么
 
-![](\filter chain.png)
+![](./filter chain.png)
 
 Filter工作在客户端和Servlet/静态资源之间，可以对客户端请求以及响应进行处理，基于此Filter可以用于实现以下功能：
 
