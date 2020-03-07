@@ -28,6 +28,7 @@
         <module>circuit-breakers-client</module>
         <module>circuit-breakers-server</module>
         <module>filter</module>
+        <module>interceptor</module>
     </modules>
 
 
