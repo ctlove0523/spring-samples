@@ -29,6 +29,7 @@
         <module>circuit-breakers-server</module>
         <module>filter</module>
         <module>interceptor</module>
+        <module>mysql</module>
     </modules>
 
 
