@@ -30,6 +30,7 @@
         <module>filter</module>
         <module>interceptor</module>
         <module>mysql</module>
+        <module>spring-cloud-gateway</module>
     </modules>
 
 
