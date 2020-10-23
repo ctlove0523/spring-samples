@@ -4,12 +4,14 @@ import io.ctlove0523.spring.gateway.JacksonUtil;
 import org.springframework.cloud.gateway.handler.predicate.PredicateDefinition;
 
 import javax.persistence.AttributeConverter;
+import javax.persistence.Converter;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * @author chentong
  */
+@Converter(autoApply = true)
 public class PredicatesConverter implements AttributeConverter<List<PredicateDefinition>, String> {
 
     @Override
@@ -23,6 +25,6 @@ public class PredicatesConverter implements AttributeConverter<List<PredicateDef
         if (dbData == null || dbData.isEmpty()) {
             return new ArrayList<>();
         }
-        return JacksonUtil.string2List(dbData,List<PredicateDefinition>.getClass());
+        return JacksonUtil.string2List(dbData, PredicateDefinition.class);
     }
 }

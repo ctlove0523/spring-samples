@@ -2,6 +2,7 @@ package io.ctlove0523.spring.gateway;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
@@ -22,13 +23,16 @@ public class JacksonUtil {
         return null;
     }
 
-    public static <T> T string2List(String input,Class<T> tClass) {
+    public static <T> List<T> string2List(String jsonString, Class<T> cls) {
         try {
-            return MAPPER.readValue(input, new TypeReference<tClass>() {
-            });
+            return MAPPER.readValue(jsonString, getCollectionType(List.class, cls));
         } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
+    }
+
+    private static JavaType getCollectionType(Class<?> collectionClass, Class<?>... elementClasses) {
+        return MAPPER.getTypeFactory().constructParametricType(collectionClass, elementClasses);
     }
 }
