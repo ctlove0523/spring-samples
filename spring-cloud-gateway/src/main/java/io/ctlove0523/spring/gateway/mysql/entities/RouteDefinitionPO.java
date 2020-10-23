@@ -1,6 +1,7 @@
 package io.ctlove0523.spring.gateway.mysql.entities;
 
 import io.ctlove0523.spring.gateway.mysql.converters.FilterConverter;
+import io.ctlove0523.spring.gateway.mysql.converters.MapConverter;
 import io.ctlove0523.spring.gateway.mysql.converters.PredicatesConverter;
 import lombok.Getter;
 import lombok.Setter;
@@ -30,6 +31,8 @@ public class RouteDefinitionPO {
     @GenericGenerator(name="system-uuid", strategy = "uuid")
     private String id;
 
+    private String routeId;
+
     @Convert(converter = PredicatesConverter.class)
     private List<PredicateDefinition> predicates;
 
@@ -38,6 +41,7 @@ public class RouteDefinitionPO {
 
     private String uri;
 
+    @Convert(converter = MapConverter.class)
     private Map<String,Object> metadata;
 
     private int routeOrder;
