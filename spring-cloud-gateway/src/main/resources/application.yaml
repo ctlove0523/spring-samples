@@ -1,7 +1,5 @@
 spring:
   jpa:
     hibernate:
-      #     更新或者创建数据表结构
       ddl-auto: update
-    #    控制台显示SQL
-    show-sql: true
+    show-sql: false

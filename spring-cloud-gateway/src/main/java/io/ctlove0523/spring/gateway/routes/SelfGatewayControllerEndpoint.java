@@ -4,6 +4,7 @@ import io.ctlove0523.spring.gateway.mysql.DbRouteDefinitionRepository;
 import io.ctlove0523.spring.gateway.mysql.entities.RouteDefinitionPO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.endpoint.web.annotation.RestControllerEndpoint;
 import org.springframework.cloud.gateway.event.RefreshRoutesEvent;
 import org.springframework.cloud.gateway.route.RouteDefinition;
 import org.springframework.cloud.gateway.support.NotFoundException;
@@ -13,7 +14,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Mono;
 
 import java.util.Optional;
@@ -22,15 +22,15 @@ import java.util.function.Function;
 /**
  * @author chentong
  */
-@RestController
+@RestControllerEndpoint(id = "self-gateway")
 @Slf4j
-public class RouteController implements ApplicationEventPublisherAware {
+public class SelfGatewayControllerEndpoint implements ApplicationEventPublisherAware {
     private ApplicationEventPublisher publisher;
 
     @Autowired
     private DbRouteDefinitionRepository repository;
 
-    @PutMapping("/v5/gateway/routes/{id}")
+    @PutMapping("/routes/{id}")
     public Mono<ResponseEntity<Object>> modifyRoute(@PathVariable String id,
                                                     @RequestBody RouteDefinition routeDefinition) {
         log.info("begin to update route with id {}", id);

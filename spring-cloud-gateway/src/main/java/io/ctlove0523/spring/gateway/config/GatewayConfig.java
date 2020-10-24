@@ -1,7 +1,9 @@
-package io.ctlove0523.spring.gateway.mysql;
+package io.ctlove0523.spring.gateway.config;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import io.ctlove0523.spring.gateway.routes.SelfGatewayControllerEndpoint;
+import org.springframework.boot.actuate.autoconfigure.endpoint.condition.ConditionalOnAvailableEndpoint;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,7 +13,12 @@ import javax.sql.DataSource;
  * @author chentong
  */
 @Configuration
-public class DataSourceConfig {
+public class GatewayConfig {
+    @Bean
+    @ConditionalOnAvailableEndpoint
+    public SelfGatewayControllerEndpoint routeController() {
+        return new SelfGatewayControllerEndpoint();
+    }
 
     @Bean
     public DataSource mysqlDataSource() {
@@ -25,7 +32,6 @@ public class DataSourceConfig {
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
 
-        // HikariDataSource 也可以配置
         return new HikariDataSource(config);
     }
 }
