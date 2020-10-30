@@ -1,3 +1,5 @@
+server:
+  port: 5230
 spring:
   jpa:
     hibernate:
