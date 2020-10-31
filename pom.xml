@@ -31,7 +31,9 @@
         <module>interceptor</module>
         <module>mysql</module>
         <module>spring-cloud-gateway</module>
-    </modules>
+		<module>reactor-netty</module>
+		<module>spring-cloud-consul</module>
+	</modules>
 
 
     <build>

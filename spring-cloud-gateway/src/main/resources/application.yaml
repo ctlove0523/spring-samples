@@ -5,3 +5,17 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: false
+  cloud:
+    gateway:
+      httpclient:
+        connectTimeout: 1000
+        responseTimeout: 1024
+        maxHeaderSize: 5230KB
+        maxInitialLineLength: 1011KB
+        pool:
+          type: FIXED
+          name: chentong
+          maxConnections: 10
+          acquireTimeout: 4500
+          maxIdleTime: 10000
+          maxLifeTime: 20000
