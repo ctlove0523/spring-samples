@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>io.ctlove0523.spring</groupId>
-		<artifactId>samples</artifactId>
+		<artifactId>spring-samples</artifactId>
 		<version>0.0.1-SNAPSHO</version>
 	</parent>
 	<groupId>io.ctlove0523.spring</groupId>
