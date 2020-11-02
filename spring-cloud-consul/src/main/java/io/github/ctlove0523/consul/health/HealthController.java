@@ -12,6 +12,7 @@ public class HealthController {
 
 	@RequestMapping(value = "/health",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Void> check() {
+		System.out.println("health check");
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 }
