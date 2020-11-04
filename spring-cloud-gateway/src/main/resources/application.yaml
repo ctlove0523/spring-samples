@@ -19,3 +19,11 @@ spring:
           acquireTimeout: 4500
           maxIdleTime: 10000
           maxLifeTime: 20000
+    consul:
+      discovery:
+        instance-id: spring-cloud-gateway
+        serviceName: gateway
+        enabled: true
+    discovery:
+      locator:
+        enabled: true
