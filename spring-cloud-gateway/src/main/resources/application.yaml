@@ -7,6 +7,15 @@ spring:
     show-sql: false
   cloud:
     gateway:
+      routes:
+        - id: secure_headers_route
+          predicates:
+            - Path=/test/health/**
+          filters:
+            - name: SecureHeaders
+              args:
+                frameOptions: chentong
+          uri: http://127.0.0.1:8765
       httpclient:
         connectTimeout: 1000
         responseTimeout: 1024
@@ -19,11 +28,11 @@ spring:
           acquireTimeout: 4500
           maxIdleTime: 10000
           maxLifeTime: 20000
-    consul:
-      discovery:
-        instance-id: spring-cloud-gateway
-        serviceName: gateway
-        enabled: true
-    discovery:
-      locator:
-        enabled: true
+#    consul:
+#      discovery:
+#        instance-id: spring-cloud-gateway
+#        serviceName: gateway
+#        enabled: true
+#    discovery:
+#      locator:
+#        enabled: true
