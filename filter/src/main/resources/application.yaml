@@ -1,2 +1,7 @@
 server:
   port: 5230
+
+spring:
+  mvc:
+    async:
+      request-timeout: 20000

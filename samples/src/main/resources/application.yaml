@@ -1,0 +1,11 @@
+server:
+  port: 5230
+
+spring:
+  mvc:
+    async:
+      request-timeout: 2000
+
+logging:
+  level:
+    root: DEBUG

@@ -23,8 +23,8 @@ import java.util.function.Supplier;
  */
 public class AsyncRetryService {
     private static final long DEFAULT_WAIT_DURATION = 300L;
-    private static ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(1, new RetryThreadFactory());
-    private static RetryConfig config = RetryConfig.custom()
+    private static final ScheduledExecutorService executor = new ScheduledThreadPoolExecutor(1, new RetryThreadFactory());
+    private static final RetryConfig config = RetryConfig.custom()
             .maxAttempts(5)
             .waitDuration(Duration.ofMillis(DEFAULT_WAIT_DURATION))
             .retryExceptions(RetryNeedException.class)
@@ -33,9 +33,9 @@ public class AsyncRetryService {
             .retryOnResult(resp -> resp.toString().contains("result cause retry"))
             .build();
 
-    private AsyncRetry asyncRetry = AsyncRetry.of("async retry", config);
+    private final AsyncRetry asyncRetry = AsyncRetry.of("async retry", config);
 
-    private AtomicInteger executeTimes = new AtomicInteger(0);
+    private final AtomicInteger executeTimes = new AtomicInteger(0);
 
     public Supplier<CompletionStage<String>> asyncRetryOnException() {
         return AsyncRetry.decorateCompletionStage(asyncRetry, executor, () -> exceptionCauseRetry());
