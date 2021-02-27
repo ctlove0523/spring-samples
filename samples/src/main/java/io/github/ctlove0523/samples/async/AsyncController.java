@@ -1,9 +1,7 @@
 package io.github.ctlove0523.samples.async;
 
-import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Supplier;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AsyncController {
 
-	@RequestMapping(value = "/v5/iot/applications/{app_id}",method = RequestMethod.GET)
+	@RequestMapping(value = "/v5/iot/applications/{app_id}", method = RequestMethod.GET)
 	public CompletableFuture<IotApplication> showIotApplication(@PathVariable(name = "app_id") String appId) {
 		IotApplication application = new IotApplication();
 		application.setId(appId);
