@@ -20,7 +20,7 @@ import java.util.function.Function;
 /**
  * @author chentong
  */
-@Component
+//@Component
 @Slf4j
 public class StorageRouteDefinitionRepository implements RouteDefinitionRepository, ApplicationEventPublisherAware {
     private ApplicationEventPublisher publisher;

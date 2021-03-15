@@ -9,3 +9,7 @@ spring:
         instance-id: consul-service-id
         serviceName: consul-application
         healthCheckPath: /health
+
+logging:
+  level:
+    root: DEBUG
