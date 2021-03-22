@@ -1,0 +1,8 @@
+server:
+  port: 8768
+spring:
+  application:
+    name: spring-cloud-consul-application
+logging:
+  level:
+    root: DEBUG

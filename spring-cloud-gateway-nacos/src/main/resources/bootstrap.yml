@@ -1,0 +1,5 @@
+spring:
+  cloud:
+    nacos:
+      host: 192.168.2.103:8848
+      port: 8848

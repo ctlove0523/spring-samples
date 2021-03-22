@@ -1,0 +1,9 @@
+server:
+  port: 5230
+spring:
+  cloud:
+    nacos:
+      discovery:
+        instance-id: gateway-service-id
+        serviceName: gateway-application
+        healthCheckPath: /health
