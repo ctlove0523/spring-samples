@@ -31,7 +31,6 @@
         <module>interceptor</module>
         <module>mysql</module>
         <module>spring-cloud-gateway</module>
-		<module>reactor-netty</module>
 		<module>spring-cloud-consul</module>
 		<module>samples</module>
 		<module>spring-cloud-nacos</module>
