@@ -1,5 +1,5 @@
 server:
-  port: 5230
+  port: 8080
 
 spring:
   mvc:

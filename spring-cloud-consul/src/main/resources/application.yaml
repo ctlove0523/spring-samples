@@ -1,5 +1,5 @@
 server:
-  port: 8765
+  port: 5231
 spring:
   application:
     name: spring-cloud-consul-application

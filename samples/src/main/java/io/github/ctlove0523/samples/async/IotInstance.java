@@ -5,8 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class IotApplication {
-	private String id;
-	private String name;
-	private String createdTime;
+public class IotInstance {
+	private String instanceId;
+	private String clusterId;
 }

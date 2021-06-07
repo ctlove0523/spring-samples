@@ -11,21 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AsyncController {
 
-	@RequestMapping(value = "/v5/iot/applications/{app_id}", method = RequestMethod.GET)
-	public CompletableFuture<IotApplication> showIotApplication(@PathVariable(name = "app_id") String appId) {
-		IotApplication application = new IotApplication();
-		application.setId(appId);
-		application.setName("default application");
-		application.setCreatedTime("2021-02-28");
+	@RequestMapping(value = "/v5/iot/instances/{instance_id}", method = RequestMethod.GET)
+	public CompletableFuture<IotInstance> showIotApplication(@PathVariable(name = "instance_id") String instanceId) {
+		IotInstance application = new IotInstance();
+		application.setInstanceId(instanceId);
+		application.setClusterId(new StringBuilder(instanceId).reverse().toString());
 
-		return CompletableFuture.supplyAsync(() -> {
-			try {
-				TimeUnit.SECONDS.sleep(3);
-			}
-			catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-			return application;
-		});
+		return CompletableFuture.supplyAsync(() -> application);
 	}
 }
