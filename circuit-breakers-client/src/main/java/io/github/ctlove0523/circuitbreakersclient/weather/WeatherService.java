@@ -1,16 +1,18 @@
 package io.github.ctlove0523.circuitbreakersclient.weather;
 
+import java.util.concurrent.Callable;
+
+import javax.annotation.PostConstruct;
+
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import javax.annotation.PostConstruct;
-import java.util.concurrent.Callable;
 
 /**
  * Copyright (C), 2018-2018, open source

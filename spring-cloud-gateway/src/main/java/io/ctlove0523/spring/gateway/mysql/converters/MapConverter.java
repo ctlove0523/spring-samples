@@ -1,11 +1,12 @@
 package io.ctlove0523.spring.gateway.mysql.converters;
 
-import io.ctlove0523.spring.gateway.util.JacksonUtil;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
-import java.util.HashMap;
-import java.util.Map;
+
+import io.ctlove0523.spring.gateway.util.JacksonUtil;
 
 /**
  * @author chentong

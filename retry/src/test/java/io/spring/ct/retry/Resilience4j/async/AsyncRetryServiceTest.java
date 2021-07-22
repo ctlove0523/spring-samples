@@ -1,12 +1,12 @@
 package io.spring.ct.retry.resilience4j.async;
 
-import io.ctlove0523.spring.retry.resilience4j.async.AsyncRetryService;
-import org.junit.Assert;
-import org.junit.Test;
-
 import java.util.concurrent.CompletionStage;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Supplier;
+
+import io.ctlove0523.spring.retry.resilience4j.async.AsyncRetryService;
+import org.junit.Assert;
+import org.junit.Test;
 
 /**
  * Copyright (C), 2018-2018, open source

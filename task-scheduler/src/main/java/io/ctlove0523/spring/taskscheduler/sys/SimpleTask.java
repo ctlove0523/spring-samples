@@ -1,11 +1,11 @@
 package io.ctlove0523.spring.taskscheduler.sys;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-
-import java.util.Date;
 
 /**
  * Copyright (C), 2018-2018, open source

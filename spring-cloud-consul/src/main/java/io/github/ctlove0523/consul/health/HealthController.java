@@ -1,7 +1,5 @@
 package io.github.ctlove0523.consul.health;
 
-import java.util.UUID;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

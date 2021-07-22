@@ -1,21 +1,21 @@
 package io.ctlove0523.spring.gateway.routes;
 
+import java.util.List;
+import java.util.function.Function;
+
 import io.ctlove0523.spring.gateway.mysql.DbRouteDefinitionRepository;
 import io.ctlove0523.spring.gateway.mysql.entities.RouteDefinitionPO;
 import lombok.extern.slf4j.Slf4j;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.gateway.event.RefreshRoutesEvent;
 import org.springframework.cloud.gateway.route.RouteDefinition;
 import org.springframework.cloud.gateway.route.RouteDefinitionRepository;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
-import org.springframework.stereotype.Component;
 import org.springframework.web.util.UriComponentsBuilder;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
-
-import java.util.List;
-import java.util.function.Function;
 
 /**
  * @author chentong

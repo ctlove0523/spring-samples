@@ -1,12 +1,14 @@
 package io.ctlove0523.spring.gateway.mysql.converters;
 
-import io.ctlove0523.spring.gateway.util.JacksonUtil;
-import org.springframework.cloud.gateway.handler.predicate.PredicateDefinition;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
-import java.util.ArrayList;
-import java.util.List;
+
+import io.ctlove0523.spring.gateway.util.JacksonUtil;
+
+import org.springframework.cloud.gateway.handler.predicate.PredicateDefinition;
 
 /**
  * @author chentong

@@ -1,7 +1,5 @@
 package io.ctlove0523.spring.retry.resilience4j;
 
-import io.github.resilience4j.retry.Retry;
-
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.atomic.AtomicInteger;
 

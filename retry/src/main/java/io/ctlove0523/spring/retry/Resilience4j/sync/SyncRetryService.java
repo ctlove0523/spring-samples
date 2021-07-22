@@ -1,12 +1,12 @@
 package io.ctlove0523.spring.retry.resilience4j.sync;
 
+import java.time.Duration;
+import java.util.concurrent.Callable;
+
 import io.ctlove0523.spring.retry.resilience4j.excpetion.RetryNeedException;
 import io.ctlove0523.spring.retry.resilience4j.excpetion.RetryNoNeedException;
 import io.github.resilience4j.retry.Retry;
 import io.github.resilience4j.retry.RetryConfig;
-
-import java.time.Duration;
-import java.util.concurrent.Callable;
 
 /**
  * Copyright (C), 2018-2018, open source
