@@ -1,0 +1,32 @@
+[
+  {
+    "name": "create user",
+    "type": "user",
+    "url": "/v1/users",
+    "action": "create",
+    "allowed_roles": [
+      "admin"
+    ]
+  },
+  {
+    "name": "create app",
+    "type": "app",
+    "url": "/v1/applications",
+    "action": "create",
+    "allowed_roles": [
+      "admin",
+      "client"
+    ]
+  },
+  {
+    "name": "show app",
+    "type": "app",
+    "url": "/v1/applications",
+    "action": "show",
+    "allowed_roles": [
+      "admin",
+      "client",
+      "guest"
+    ]
+  }
+]
