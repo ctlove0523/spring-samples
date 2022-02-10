@@ -1,0 +1,7 @@
+server:
+  port: 3307
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update #更新或者创建数据表结构
+    show-sql: true #控制台显示SQL
