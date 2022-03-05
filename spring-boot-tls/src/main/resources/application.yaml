@@ -1,0 +1,13 @@
+servers:
+  - port: 8090
+    scheme: https
+    sslEnabled: true
+    keystoreFile: D:\codes\GitHub\spring-samples\spring-boot-tls\src\main\resources\keystore.p12
+    keystorePass: 123456
+    keyAlias: tls-server
+    allowedUrls:
+      - /**
+  - port: 8080
+    scheme: http
+    allowedUrls:
+      - /api/health

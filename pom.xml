@@ -37,6 +37,7 @@
 		<module>spring-cloud-gateway-nacos</module>
 		<module>spring-boot-jwt</module>
         <module>jpa-mysql</module>
+        <module>spring-boot-tls</module>
     </modules>
 
 
